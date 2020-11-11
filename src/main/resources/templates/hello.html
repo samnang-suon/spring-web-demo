@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Page</title>
+
+    <!-- Add Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to hello page</h1>
+    <h2 th:text="${secret}"></h2>
+    <h2 th:text="${getHomePagWithModelAttribute}"></h2>
+    <a href="/hello/showForm">Go to form</a>
+</body>
+</html>
