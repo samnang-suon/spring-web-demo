@@ -22,8 +22,8 @@ public class UserController {
             @PathVariable("id") int id
     ) {
         Person foundPerson = null;
-        for(Person p : this.persons) {
-            if(p.getId() == id) {
+        for (Person p : this.persons) {
+            if (p.getId() == id) {
                 foundPerson = p;
                 break;
             }
@@ -64,8 +64,8 @@ public class UserController {
             @RequestParam(value = "is_married", defaultValue = "false") boolean isMarried
     ) {
         Person foundPerson = null;
-        for(Person p : this.persons) {
-            if(p.getId() == id) {
+        for (Person p : this.persons) {
+            if (p.getId() == id) {
                 p.setFirstName(firstName);
                 p.setLastName(lastName);
                 p.setAge(age);
@@ -83,14 +83,14 @@ public class UserController {
     public String putUser(
             @RequestParam(value = "id", defaultValue = "1") int id
     ) {
-        for(Person p : this.persons) {
-            if(p.getId() == id) {
+        for (Person p : this.persons) {
+            if (p.getId() == id) {
                 this.persons.remove(p);
-                break;
+                return "Person id <" + id + "> has been deleted.";
             }
         }
-        Gson gson = new Gson();
-        return gson.toJson(this.persons);
+
+        return "No person found with id <" + id + ">.";
     }
 
     public class Person {
